@@ -24,9 +24,11 @@ header {
     background-size: cover;
     color: white;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
-.titulek {
+#titulek {
     font-family: 'Raleway', serif;
     padding-top: 30px;
     font-size: 50px;
@@ -169,11 +171,24 @@ footer p {
         text-align: center;
     }
 
+    .autor {
+        padding-bottom: 100px;
+        margin: 0;
+    }
+
+    .obsah {
+        position: relative;
+        top: -60px;
+        z-index: 10;
+        background-color: white;
+    }
+
     .menu {
         float: left;
         padding: 0px 40px 200px 40px;
         list-style-type: none;
         margin: 0;
+        background-color: white;
     }
 
     .menu li {
@@ -183,20 +198,30 @@ footer p {
         border-top: none;
     }
 
+    .menu a {
+        text-align: left;
+    }
+
+    .proc {
+        padding-right: 227px;
+    }
+
+    .comusitevidet {
+        padding-left: 227px;
+    }
+
     .popisek {
 
     }
 
-
-
     .galerie {
         display: flex;
         flex-wrap: wrap;
-
     }
 
     .foto {
         width: calc(100% / 3);
+        overflow: hidden;
     }
 
     .foto:nth-child(9) {
@@ -204,17 +229,16 @@ footer p {
     }
 
     .foto img {
-        -webkit-transform: scale(1);
         transform: scale(1);
-        -webkit-transition: .3s ease-in-out;
         transition: .3s ease-in-out;
     }
+
     .foto:hover img {
-        -webkit-transform: scale(1.3);
         transform: scale(1.3);
     }
 
-    .footer p {
-        padding-left: 300px;
+    footer {
+        padding-left: 10%;
     }
+
 }
