@@ -22,6 +22,7 @@ header {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/island-hlavicka.jpg");
     background-color: gray;
     background-size: cover;
+    background-position: center;
     color: white;
     text-align: center;
 }
@@ -121,7 +122,7 @@ h2:after {
 
 
 /* FOTOGALERIE */
-.foto img{
+.foto img {
     width: 100%;
     padding-top: 0;
 }
@@ -150,6 +151,8 @@ footer p {
 @media (min-width: 500px) {
     ul {
         text-align: center;
+        display: flex;
+        align-items: stretch;
     }
 
     .menu li {
@@ -162,7 +165,14 @@ footer p {
 
     .menu li:nth-child(4){
         border-right: none;
-    }    
+    }
+
+    .menu a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    }
 
     .galerie {
         display: flex;
@@ -183,6 +193,8 @@ footer p {
     .galerie .popisek {
         display: none;
     }
+
+}
 
 @media (min-width: 1000px) {
        .perex {
@@ -221,6 +233,10 @@ footer p {
         flex-shrink: 0;
     }
 
+    ul {
+        display: block;
+    }
+
     .menu li {
         display: block;
         width: auto;
@@ -230,6 +246,7 @@ footer p {
 
     .menu a {
         text-align: left;
+        display: block;
     }
 
     h2 {
@@ -272,30 +289,34 @@ footer p {
     .foto img {
         transform: scale(1);
         transition: transform .3s ease-in-out;
+    }
+
+    .galerie .foto {
         position: relative;
+        margin: 0;
     }
 
     .foto:hover img {
         transform: scale(1.3);
     }
 
-    .foto img .popisek {
-        transition: transform .3s ease-in-out;
-        position: relative;
-        margin-top: -20px;
+    .foto .popisek {
         text-align: center;
-        color: white;
+        background-color: rgba(50, 50, 50, 0.7);
+        display: block;
+        width: 100%;
+        line-height: 1.6;
+        margin: 0;
+        padding: 10px 40px;
         position: absolute;
-        bottom: 20%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        bottom: 0;
+        transition: transform .3s ease-in-out;
+        transform: translateY(100%);
     }
 
-    .foto:hover img .popisek {
+    .foto:hover .popisek {
         display: block;
-        margin-top: -20px;
-        text-align: center;
-        color: white;
+        transform: translateY(0);
     }
 
     footer {
